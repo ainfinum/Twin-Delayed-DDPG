@@ -91,6 +91,8 @@ class Critic(nn.Module):
 # Selecting the device (CPU or GPU)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+print ("  Device: %s" % (device))
+
 # Building the whole Training Process into a class
 
 class TD3(object):
@@ -297,7 +299,7 @@ while total_timesteps < max_timesteps:
   #print("new_obs, reward, done")
   #print(new_obs, reward, done)
   
-  # We check if the episode is done
+  # We check if the episode is doneubuntu 
   done_bool = 0 if episode_timesteps + 1 == env._max_episode_steps else float(done)
   
   # We increase the total reward
